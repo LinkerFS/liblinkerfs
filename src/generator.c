@@ -21,9 +21,11 @@
 
 #include <string.h>
 #include <malloc.h>
+#include "log/log.h"
 #include "generator.h"
 #include "linkferfs/header_info.h"
 #include "linkferfs/part_info.h"
+
 
 size_t calculate_buf_size(const WARP_CONFIG *warp_config) {
     size_t wrap_config_size = 0;
@@ -95,6 +97,11 @@ const unsigned char *generate_warp_file(const WARP_CONFIG *warp_config, size_t *
 
     *warp_file_size = config_size;
     buf = (unsigned char *) malloc(config_size);
+
+    if (!buf) {
+        LOG_OOM_MSG;
+        return NULL;
+    }
     warp_size = write_parts_and_path(warp_config, buf + header_length);
     write_header(warp_config, warp_size, buf);
 
