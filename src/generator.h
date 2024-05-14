@@ -1,5 +1,5 @@
 /*
- * liblinkerfs: a utils library for linkerfs
+ * liblinkerfs: a utils library for project linkerfs
  * Copyright (C) 2024  kaedeair <kaedeair@outlook.com>
  *
  * This file is part of liblinkerfs.
