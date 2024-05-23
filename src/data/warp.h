@@ -32,7 +32,7 @@ typedef struct wrap_target {
 } WARP_TARGET;
 
 typedef struct wrap_config {
-    WARP_TARGET *warp_targets;
+    WARP_TARGET **warp_targets_ptr;
     int warp_count;
 } WARP_CONFIG;
 #endif //LIBLINKERFS_WARP_H
