@@ -24,15 +24,15 @@
 
 #include <stdint.h>
 
-typedef struct wrap_target {
+typedef struct warp_target {
     int64_t size_to_read;
     int64_t offset_in_file;
-    int32_t path_length;
-    char *file_path;
+    uint16_t path_length;
+    const char *file_path;
 } WARP_TARGET;
 
-typedef struct wrap_config {
+typedef struct warp_config {
     WARP_TARGET *warp_targets;
-    int warp_count;
+    uint16_t warp_count;
 } WARP_CONFIG;
 #endif //LIBLINKERFS_WARP_H

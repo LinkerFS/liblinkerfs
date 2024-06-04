@@ -29,11 +29,11 @@
 
 size_t calculate_buf_size(const WARP_CONFIG *warp_config) {
     size_t wrap_config_size = 0;
-    const uint32_t warp_count = warp_config->warp_count;
+    const uint16_t warp_count = warp_config->warp_count;
 
     wrap_config_size += header_length;
     wrap_config_size += part_info_length * warp_count;
-    for (uint32_t i = 0; i < warp_count; ++i) {
+    for (uint16_t i = 0; i < warp_count; ++i) {
         wrap_config_size += warp_config->warp_targets->path_length;
     }
     return wrap_config_size;
@@ -68,7 +68,7 @@ int64_t write_parts_and_path(const WARP_CONFIG *warp_config, unsigned char *buf)
     warp_target = warp_config->warp_targets;
     part_cur = (LINKERFS_PART *) buf;
     path_offset = part_info_length * warp_config->warp_count;
-    for (uint32_t i = 0; i < warp_config->warp_count; ++i, ++part_cur, ++warp_target) {
+    for (uint16_t i = 0; i < warp_config->warp_count; ++i, ++part_cur, ++warp_target) {
         LINKERFS_PART part = {
                 .data_size          =   warp_target->size_to_read,
                 .data_begin_offset  =   warp_target->offset_in_file,
