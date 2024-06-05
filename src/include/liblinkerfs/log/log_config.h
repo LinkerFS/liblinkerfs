@@ -19,20 +19,20 @@
  * along with liblinkerfs. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBLINKERFS_GENERATOR_H
-#define LIBLINKERFS_GENERATOR_H
+#ifndef LIBLINKERFS_LOG_CONFIG_H
+#define LIBLINKERFS_LOG_CONFIG_H
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include "data/warp.h"
+#include "liblinkerfs_export.h"
 
-size_t calculate_buf_size(const WARP_CONFIG *warp_config);
+typedef void (*LIBLINKERFS_LOG_FUNC)(const char *file, int line, const char *func, const char *msg);
 
-const unsigned char *generate_warp_file(const WARP_CONFIG *warp_config, size_t *warp_file_size);
+LIBLINKERFS_PUBLIC void liblinkerfs_set_log_handler(LIBLINKERFS_LOG_FUNC func);
 
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_GENERATOR_H
+#endif //LIBLINKERFS_LOG_CONFIG_H

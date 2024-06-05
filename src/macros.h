@@ -22,6 +22,7 @@
 #ifndef LIBLINKERFS_MACROS_H
 #define LIBLINKERFS_MACROS_H
 
+
 #define LIBLINKERFS_CHK_PRINTF(format_pos,args) __attribute__((format(printf,format_pos,args)))
 
 
