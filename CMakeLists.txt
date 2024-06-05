@@ -5,6 +5,11 @@ set(CMAKE_C_STANDARD 99)
 if (WIN32)
     set(CMAKE_SHARED_LIBRARY_PREFIX "")
 endif ()
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+
+if (${PROJECT_IS_TOP_LEVEL})
+    set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+else ()
+    set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR})
+endif ()
 
 add_subdirectory(src)
