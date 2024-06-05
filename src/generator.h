@@ -21,12 +21,18 @@
 
 #ifndef LIBLINKERFS_GENERATOR_H
 #define LIBLINKERFS_GENERATOR_H
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #include "data/warp.h"
-
 
 size_t calculate_buf_size(const WARP_CONFIG *warp_config);
 
 const unsigned char *generate_warp_file(const WARP_CONFIG *warp_config, size_t *warp_file_size);
 
+#ifdef __cplusplus
+}
+#endif
 #endif //LIBLINKERFS_GENERATOR_H

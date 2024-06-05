@@ -21,6 +21,10 @@
 
 #ifndef LIBLINKERFS_WARP_H
 #define LIBLINKERFS_WARP_H
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #include <stdint.h>
 
@@ -35,4 +39,8 @@ typedef struct warp_config {
     WARP_TARGET *warp_targets;
     uint16_t warp_count;
 } WARP_CONFIG;
+
+#ifdef __cplusplus
+}
+#endif
 #endif //LIBLINKERFS_WARP_H
