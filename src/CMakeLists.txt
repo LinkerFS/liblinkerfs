@@ -12,11 +12,13 @@ set(HEADERS
         include/liblinkerfs/data/warp.h
         include/liblinkerfs/log/log_config.h
         include/liblinkerfs/generator.h
+utils        include/liblinkerfs/utils/algorithm.h
 )
 
 set(SOURCES
         generator.c
         log/log.c
+        utils/algorithm.c
 )
 
 add_library(liblinkerfs ${SOURCES} ${HEADERS})
