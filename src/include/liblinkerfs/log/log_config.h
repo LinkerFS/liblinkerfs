@@ -30,6 +30,10 @@ extern "C"
 
 typedef void (*LIBLINKERFS_LOG_FUNC)(const char *file, int line, const char *func, const char *msg);
 
+/**
+ * set custom logger and disable stdout/stderr
+ * @param func custom log function, if null, do nothing
+ */
 LIBLINKERFS_PUBLIC void liblinkerfs_set_log_handler(LIBLINKERFS_LOG_FUNC func);
 
 #ifdef __cplusplus

@@ -29,8 +29,19 @@ extern "C"
 #include "liblinkerfs_export.h"
 #include "data/warp.h"
 
+/**
+ * get the size of warp configuration file
+ * @param warp_config config data
+ * @return size of warp configuration file
+ */
 LIBLINKERFS_PUBLIC size_t calculate_buf_size(const WARP_CONFIG *warp_config);
 
+/**
+ * get the data of warp configuration file
+ * @param warp_config config data
+ * @param warp_file_size the size of warp configuration file
+ * @return the pointer of data, should be free after using
+ */
 LIBLINKERFS_PUBLIC const unsigned char *generate_warp_file(const WARP_CONFIG *warp_config, size_t *warp_file_size);
 
 #ifdef __cplusplus

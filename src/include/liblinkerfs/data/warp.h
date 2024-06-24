@@ -28,6 +28,9 @@ extern "C"
 
 #include <stdint.h>
 
+/**
+ * part info in warp configuration file
+ */
 typedef struct warp_target {
     int64_t size_to_read;
     int64_t offset_in_file;
@@ -35,6 +38,9 @@ typedef struct warp_target {
     const char *file_path;
 } WARP_TARGET;
 
+/**
+ * base info of warp configuration file
+ */
 typedef struct warp_config {
     WARP_TARGET *warp_targets;
     uint16_t warp_count;
