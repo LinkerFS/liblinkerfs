@@ -31,6 +31,11 @@ extern "C"
 #include "liblinkerfs_export.h"
 
 /**
+ * function to compare element, return 0 if equal, positive number if first element greater, and negative otherwise
+ */
+typedef int (*COMPARE_FUNC)(const void *, const void *);
+
+/**
  * swap item
  * @param a pointer of item a
  * @param b pointer of item b
@@ -44,21 +49,21 @@ LIBLINKERFS_PUBLIC void swap_item(void *a, void *b, size_t size);
  * @param top_k rank of largest element
  * @param array_length length of the array
  * @param element_size size of element in memory
- * @param ptr_func_compare function to compare element, return 0 if equal, positive number if first element greater, and negative otherwise
+ * @param compare custom function to compare element
  * @return index of k-th largest element
  */
 LIBLINKERFS_PUBLIC size_t bfprt(void *base, size_t top_k, size_t array_length, uint32_t element_size,
-                                int (*ptr_func_compare)(const void *, const void *));
+                                COMPARE_FUNC compare);
 
 /**
  * insert sort for a sequential array
  * @param base pointer of the array begin
  * @param array_length length of the array
  * @param element_size size of element in memory
- * @param ptr_func_compare function to compare element, return 0 if equal, positive number if first element greater, and negative otherwise
+ * @param compare custom function to compare element
  */
 LIBLINKERFS_PUBLIC void insert_sort(void *base, size_t array_length, uint32_t element_size,
-                                    int (*ptr_func_compare)(const void *, const void *));
+                                    COMPARE_FUNC compare);
 
 #ifdef __cplusplus
 }
