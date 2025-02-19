@@ -1,0 +1,4 @@
+[submodule "depends/linkerfs"]
+	path = depends/linkerfs
+	url = https://github.com/LinkerFS/linkerfs.git
+	branch = main

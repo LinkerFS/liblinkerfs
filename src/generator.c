@@ -23,8 +23,8 @@
 #include <malloc.h>
 #include "log/log.h"
 #include "generator.h"
-#include "linkferfs/header_info.h"
-#include "linkferfs/part_info.h"
+#include "linkerfs/filesystem/data/header_info.h"
+#include "linkerfs/filesystem/data/part_info.h"
 
 
 size_t calculate_buf_size(const WARP_CONFIG *warp_config) {
