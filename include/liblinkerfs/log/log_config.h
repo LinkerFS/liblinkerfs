@@ -26,7 +26,7 @@ extern "C"
 {
 #endif
 
-#include "liblinkerfs_export.h"
+#include "liblinkerfs/liblinkerfs_export.h"
 
 typedef void (*LIBLINKERFS_LOG_FUNC)(const char *file, int line, const char *func, const char *msg);
 

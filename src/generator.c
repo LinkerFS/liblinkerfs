@@ -22,7 +22,7 @@
 #include <string.h>
 #include <malloc.h>
 #include "log/log.h"
-#include "generator.h"
+#include "liblinkerfs/generator.h"
 #include "linkerfs/filesystem/data/header_info.h"
 #include "linkerfs/filesystem/data/part_info.h"
 

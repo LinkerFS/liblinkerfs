@@ -12,5 +12,9 @@ else ()
     set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 endif ()
 
+if (NOT DEFINED BUILD_SHARED_LIBS)
+    set(BUILD_SHARED_LIBS ON)
+endif ()
+
 add_subdirectory(src)
 add_subdirectory(depends)

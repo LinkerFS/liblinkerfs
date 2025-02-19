@@ -19,7 +19,7 @@
  * along with liblinkerfs. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "common.h"
+#include "liblinkerfs/common.h"
 
 uint64_t feature() {
     FEATURE feat = FEATURE_BASE;

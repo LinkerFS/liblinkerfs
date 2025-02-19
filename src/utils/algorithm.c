@@ -19,7 +19,7 @@
  * along with liblinkerfs. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "utils/algorithm.h"
+#include "liblinkerfs/utils/algorithm.h"
 #include <memory.h>
 
 void swap_item(void *a, void *b, size_t size) {

@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "log.h"
-#include "log/log_config.h"
+#include "liblinkerfs/log/log_config.h"
 
 
 static LIBLINKERFS_LOG_FUNC log_func = NULL;
