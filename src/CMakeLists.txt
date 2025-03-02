@@ -4,7 +4,7 @@ if (NOT BUILD_SHARED_LIBS)
     add_definitions(-DLIBLINKERFS_BUILD_STATIC)
 endif ()
 
-set(EXPORT_HEADERS ${CMAKE_SOURCE_DIR}/include/liblinkerfs)
+set(EXPORT_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/../include/liblinkerfs)
 set(LIBLINKERFS_EXPORT_FILE "${EXPORT_HEADERS}/liblinkerfs_export.h")
 set(HEADERS
         log/log.h
@@ -26,7 +26,7 @@ add_library(liblinkerfs ${SOURCES} ${HEADERS})
 set_target_properties(liblinkerfs PROPERTIES OUTPUT_NAME "linkerfs")
 target_link_libraries(liblinkerfs linkerfs_interface)
 target_include_directories(liblinkerfs PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
