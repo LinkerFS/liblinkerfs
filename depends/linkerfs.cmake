@@ -1,0 +1,2 @@
+add_library(linkerfs_interface INTERFACE)
+target_include_directories(linkerfs_interface INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/linkerfs/include)
