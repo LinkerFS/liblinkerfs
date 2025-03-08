@@ -2,3 +2,7 @@
 	path = depends/linkerfs
 	url = https://github.com/LinkerFS/linkerfs.git
 	branch = main
+[submodule "depends/libudfread"]
+	path = depends/libudfread
+	url = https://github.com/LinkerFS/libudfread
+	branch = master
