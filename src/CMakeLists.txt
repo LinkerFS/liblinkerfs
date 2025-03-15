@@ -30,6 +30,7 @@ target_include_directories(liblinkerfs PUBLIC
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
+add_subdirectory(udf)
 generate_export_header(liblinkerfs
         EXPORT_FILE_NAME ${LIBLINKERFS_EXPORT_FILE}
         BASE_NAME "LIBLINKERFS"
