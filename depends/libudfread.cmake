@@ -1,4 +1,4 @@
-find_library(LIB_udfread NAMES udfread PATHS ${CMAKE_CURRENT_SOURCE_DIR}/binary/libudfread/lib NO_CACHE)
+find_library(LIB_udfread NAMES udfread PATHS ${CMAKE_CURRENT_SOURCE_DIR}/binary/libudfread/lib NO_CACHE NO_CMAKE_SYSTEM_PATH)
 
 if (LIB_udfread)
     message(STATUS "Found Library udfread: ${LIB_udfread}")
