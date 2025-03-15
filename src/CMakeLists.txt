@@ -24,7 +24,7 @@ set(SOURCES
 
 add_library(liblinkerfs ${SOURCES} ${HEADERS})
 set_target_properties(liblinkerfs PROPERTIES OUTPUT_NAME "linkerfs")
-target_link_libraries(liblinkerfs linkerfs_interface)
+target_link_libraries(liblinkerfs PUBLIC linkerfs_interface)
 target_include_directories(liblinkerfs PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
         PRIVATE

@@ -22,7 +22,7 @@
 #ifndef LIBLINKERFS_LOG_H
 #define LIBLINKERFS_LOG_H
 
-#include "macros.h"
+#include "../macros.h"
 
 #define DEBUG_MSG(...) \
 do{                    \
