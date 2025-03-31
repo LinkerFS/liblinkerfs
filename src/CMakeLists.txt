@@ -27,8 +27,6 @@ set_target_properties(liblinkerfs PROPERTIES OUTPUT_NAME "linkerfs")
 target_link_libraries(liblinkerfs PUBLIC linkerfs_interface)
 target_include_directories(liblinkerfs PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
-        PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 add_subdirectory(udf)
 generate_export_header(liblinkerfs
