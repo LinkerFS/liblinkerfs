@@ -28,29 +28,25 @@ extern "C"
 
 #include "udfread/udfread.h"
 #include "liblinkerfs/liblinkerfs_export.h"
-#include "liblinkerfs/data/warp.h"
+#include "liblinkerfs/generator.h"
 
-typedef enum udf_warp_type {
-    UDF_RAW_DATA,
-    UDF_WARP_DATA
-} UDF_WARP_TYPE;
 
-typedef struct udf_warp_result {
-    unsigned char *data;
-    uint32_t data_size;
-    UDF_WARP_TYPE type;
-} UDF_WARP_RESULT;
+typedef struct udf_warp_target
+{
+    UDFFILE_INFO* file_info;
+    off_t offset_in_file;
+    ssize_t size_to_read;
+} UDF_WARP_TARGET;
 
-LIBLINKERFS_PUBLIC
-UDF_WARP_RESULT udf_try_generate_warp_file(const char *udf_file_path, const char *file_path_in_udf, const off_t begin,
-                                           const size_t size_to_read);
+typedef struct udf_warp_config
+{
+    UDF_WARP_TARGET* targets;
+    const char* udf_file_path;
+    uint32_t file_path_length;
+    uint16_t target_count;
+} UDF_WARP_CONFIG;
 
-LIBLINKERFS_PUBLIC void udf_realse_result(UDF_WARP_RESULT **result);
-
-LIBLINKERFS_PRIVATE
-unsigned char *
-udf_generate_warp_file(const UDFFILE_INFO *file_info, const char *udf_file_path, const off_t begin, const size_t size_to_read, uint32_t *data_length);
-
+LIBLINKERFS_PUBLIC WARP_FILE udf_generate_warp_file(const UDF_WARP_CONFIG* udf_warp_config);
 
 #ifdef  __cplusplus
 }
