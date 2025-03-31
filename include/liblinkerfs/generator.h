@@ -30,19 +30,26 @@ extern "C"
 #include "data/warp.h"
 
 /**
- * get the size of warp configuration file
- * @param warp_config config data
- * @return size of warp configuration file
+ * data and length of warp configuration file
  */
-LIBLINKERFS_PUBLIC size_t calculate_buf_size(const WARP_CONFIG *warp_config);
+typedef struct warp_file{
+    size_t length; //number of valid bytes in 'data'
+    unsigned char * data;
+}WARP_FILE;
 
 /**
- * get the data of warp configuration file
- * @param warp_config config data
- * @param warp_file_size the size of warp configuration file
- * @return the pointer of data, should be free after using
+ * convert warp config to warp configuration file, release after using
+ * @param warp_config warp config to convert
+ * @return warp file content with length
  */
-LIBLINKERFS_PUBLIC const unsigned char *generate_warp_file(const WARP_CONFIG *warp_config, size_t *warp_file_size);
+LIBLINKERFS_PUBLIC WARP_FILE generate_warp_file(const WARP_CONFIG *warp_config);
+
+/**
+ * release warp file
+ * @param warp_file
+ */
+LIBLINKERFS_PUBLIC void release_warp_file(WARP_FILE *warp_file);
+
 
 #ifdef __cplusplus
 }
