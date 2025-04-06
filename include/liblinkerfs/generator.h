@@ -38,15 +38,15 @@ typedef struct warp_file{
 }WARP_FILE;
 
 /**
- * convert warp config to warp configuration file, release after using
+ * convert warp config to warp configuration file
  * @param warp_config warp config to convert
- * @return warp file content with length
+ * @return warp file content with length, should release with `release_warp_file` after using
  */
 LIBLINKERFS_PUBLIC WARP_FILE generate_warp_file(const WARP_CONFIG *warp_config);
 
 /**
- * release warp file
- * @param warp_file
+ * release memory and set data to NULL for WARP_FILE
+ * @param warp_file WARP_FILE to release
  */
 LIBLINKERFS_PUBLIC void release_warp_file(WARP_FILE *warp_file);
 

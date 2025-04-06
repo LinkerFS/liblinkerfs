@@ -26,6 +26,9 @@
 #include "liblinkerfs/udf/udf.h"
 #include "../log/log.h"
 
+/**
+ * store temporary data, must be initialed with 0
+ */
 typedef struct udf_warp_target_helper
 {
     struct content_parts
