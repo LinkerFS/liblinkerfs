@@ -4,6 +4,8 @@ if (NOT BUILD_SHARED_LIBS)
     add_definitions(-DLIBLINKERFS_BUILD_STATIC)
 endif ()
 
+configure_file(config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/../include/liblinkerfs/config.h)
+
 set(EXPORT_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/../include/liblinkerfs)
 set(LIBLINKERFS_EXPORT_FILE "${EXPORT_HEADERS}/liblinkerfs_export.h")
 set(HEADERS
@@ -28,7 +30,11 @@ target_link_libraries(liblinkerfs PUBLIC linkerfs_interface)
 target_include_directories(liblinkerfs PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
 )
-add_subdirectory(udf)
+
+if (ENABLE_FEATURE_UDF)
+    add_subdirectory(udf)
+endif ()
+
 generate_export_header(liblinkerfs
         EXPORT_FILE_NAME ${LIBLINKERFS_EXPORT_FILE}
         BASE_NAME "LIBLINKERFS"

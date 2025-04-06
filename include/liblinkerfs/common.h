@@ -26,14 +26,16 @@ extern "C"
 {
 #endif
 
-#include "liblinkerfs_export.h"
 #include <stdint.h>
+
+#include "liblinkerfs/liblinkerfs_export.h"
 
 /**
  * feature mask
  */
 typedef enum feature {
-    FEATURE_BASE = 0
+    FEATURE_BASE = 0,
+    FEATURE_UDF=2
 } FEATURE;
 
 /**

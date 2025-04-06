@@ -148,5 +148,6 @@ _deps
 .idea/
 build/
 *include/liblinkerfs/liblinkerfs_export.h
+*include/liblinkerfs/config.h
 *depends/binary/**/*.h
 *depends/binary/**/*.hpp

@@ -20,8 +20,12 @@
  */
 
 #include "liblinkerfs/common.h"
+#include "liblinkerfs/config.h"
 
 uint64_t feature() {
-    FEATURE feat = FEATURE_BASE;
+    static FEATURE feat = FEATURE_BASE;
+#if ENABLE_FEATURE_UDF
+    feat|=FEATURE_UDF;
+#endif
     return feat;
 }

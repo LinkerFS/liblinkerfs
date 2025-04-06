@@ -26,6 +26,9 @@ extern "C"
 {
 #endif
 
+#include "liblinkerfs/config.h"
+#if ENABLE_FEATURE_UDF
+
 #include "udfread/udfread.h"
 #include "liblinkerfs/liblinkerfs_export.h"
 #include "liblinkerfs/generator.h"
@@ -54,6 +57,8 @@ typedef struct udf_warp_config
  * @return warp file content with length, should release with `release_warp_file` after using
  */
 LIBLINKERFS_PUBLIC WARP_FILE udf_generate_warp_file(const UDF_WARP_CONFIG* udf_warp_config);
+
+#endif
 
 #ifdef  __cplusplus
 }

@@ -4,4 +4,7 @@ else ()
     set(CMAKE_FIND_LIBRARY_SUFFIXES ".a" ".lib")
 endif ()
 include(linkerfs.cmake)
-include(libudfread.cmake)
+
+if (ENABLE_FEATURE_UDF)
+    include(libudfread.cmake)
+endif ()
