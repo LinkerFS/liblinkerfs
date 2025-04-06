@@ -46,6 +46,8 @@ generate_export_header(liblinkerfs
         INCLUDE_GUARD_NAME "LIBLINKERFS_EXPORT_H"
         DEFINE_NO_DEPRECATED
 )
+install(TARGETS liblinkerfs DESTINATION lib/liblinkerfs)
+install(DIRECTORY ${EXPORT_HEADERS} DESTINATION include)
 
 if (${PROJECT_IS_TOP_LEVEL})
     file(COPY ${EXPORT_HEADERS} DESTINATION ${CMAKE_BINARY_DIR}/include)
