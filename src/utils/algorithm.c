@@ -56,7 +56,8 @@ void insert_sort(void *base, size_t array_length, uint32_t element_size, int (*c
     }
 }
 
-size_t bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32_t element_size,
+static size_t
+bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32_t element_size,
                        int (*compare)(const void *, const void *)) {
     char *array;
     char *head;
@@ -88,7 +89,7 @@ size_t bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32
     return (head - array) / element_size;
 }
 
-size_t
+static size_t
 bfprt_get_median_of_median(void *base, size_t size, uint32_t element_size,
                            int (*compare)(const void *, const void *)) {
     char *array;

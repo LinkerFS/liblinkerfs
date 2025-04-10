@@ -98,7 +98,7 @@ static void write_part_info(const WARP_TARGET* target, LINKERFS_PART* part,
     part->unused = 0;
 }
 
-void write_path_info(const WARP_TARGET* target, unsigned char* path_info_begin, const PATH_INFO_HELPER* path_helper)
+static void write_path_info(const WARP_TARGET* target, unsigned char* path_info_begin, const PATH_INFO_HELPER* path_helper)
 {
     if (!path_helper->duplicate)
     {
