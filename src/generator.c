@@ -81,9 +81,8 @@ static void write_header(const WARP_CONFIG* warp_config, const int64_t size, uns
         .num_parts = warp_config->warp_count,
         .fmt_version.major = 0,
         .fmt_version.minor = 0,
-        .unused = 0
+        .reserved={0}
     };
-
     memcpy(header.magic, magic_number, sizeof(magic_number));
     memcpy(buf, &header, header_length);
 }
@@ -95,7 +94,7 @@ static void write_part_info(const WARP_TARGET* target, LINKERFS_PART* part,
     part->path_offset = path_offset + path_helper_array->offset;
     part->data_begin_offset = target->offset_in_file;
     part->data_size = target->size_to_read;
-    part->unused = 0;
+    memset(part->reserved, 0, sizeof(part->reserved));
 }
 
 static void write_path_info(const WARP_TARGET* target, unsigned char* path_info_begin, const PATH_INFO_HELPER* path_helper)
