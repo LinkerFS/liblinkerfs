@@ -21,14 +21,15 @@
 
 #ifndef LIBLINKERFS_COMMON_H
 #define LIBLINKERFS_COMMON_H
+
+#include "liblinkerfs/liblinkerfs_export.h"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
 #include <stdint.h>
-
-#include "liblinkerfs/liblinkerfs_export.h"
 
 /**
  * feature mask

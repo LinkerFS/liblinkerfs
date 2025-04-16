@@ -21,17 +21,17 @@
 
 #ifndef LIBLINKERFS_UDF_H
 #define LIBLINKERFS_UDF_H
+
+#include "liblinkerfs/config.h"
+#include "liblinkerfs/generator.h"
+#include "liblinkerfs/liblinkerfs_export.h"
+#include "udfread/udfread.h"
+
+#if LIBLINKERFS_ENABLE_UDF
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include "liblinkerfs/config.h"
-#if LIBLINKERFS_ENABLE_UDF
-
-#include "udfread/udfread.h"
-#include "liblinkerfs/liblinkerfs_export.h"
-#include "liblinkerfs/generator.h"
 
 /**
  * describe the position and length of data for a specific file in the UDF file system
@@ -58,9 +58,8 @@ typedef struct udf_warp_config
  */
 LIBLINKERFS_PUBLIC WARP_FILE udf_generate_warp_file(const UDF_WARP_CONFIG* udf_warp_config);
 
-#endif
-
 #ifdef  __cplusplus
 }
+#endif
 #endif
 #endif //LIBLINKERFS_UDF_H

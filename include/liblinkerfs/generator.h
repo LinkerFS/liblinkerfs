@@ -21,13 +21,14 @@
 
 #ifndef LIBLINKERFS_GENERATOR_H
 #define LIBLINKERFS_GENERATOR_H
+
+#include "data/warp.h"
+#include "liblinkerfs_export.h"
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include "liblinkerfs_export.h"
-#include "data/warp.h"
 
 /**
  * data and length of warp configuration file

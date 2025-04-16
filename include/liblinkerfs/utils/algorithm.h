@@ -21,6 +21,9 @@
 
 #ifndef LIBLINKERFS_ALGORITHM_H
 #define LIBLINKERFS_ALGORITHM_H
+
+#include "liblinkerfs/liblinkerfs_export.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -28,7 +31,6 @@ extern "C"
 
 #include <stddef.h>
 #include <stdint.h>
-#include "liblinkerfs/liblinkerfs_export.h"
 
 /**
  * function to compare element, return 0 if equal, positive number if first element greater, and negative otherwise

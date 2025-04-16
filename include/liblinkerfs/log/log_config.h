@@ -21,12 +21,12 @@
 
 #ifndef LIBLINKERFS_LOG_CONFIG_H
 #define LIBLINKERFS_LOG_CONFIG_H
+
+#include "liblinkerfs/liblinkerfs_export.h"
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-
-#include "liblinkerfs/liblinkerfs_export.h"
 
 typedef void (*LIBLINKERFS_LOG_FUNC)(const char *file, int line, const char *func, const char *msg);
 
