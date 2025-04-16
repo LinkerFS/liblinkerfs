@@ -31,7 +31,7 @@ target_include_directories(liblinkerfs PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
 )
 
-if (ENABLE_FEATURE_UDF)
+if (LIBLINKERFS_ENABLE_UDF)
     add_subdirectory(udf)
 endif ()
 

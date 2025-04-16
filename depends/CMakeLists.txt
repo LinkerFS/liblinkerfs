@@ -5,6 +5,6 @@ else ()
 endif ()
 include(linkerfs.cmake)
 
-if (ENABLE_FEATURE_UDF)
+if (LIBLINKERFS_ENABLE_UDF)
     include(libudfread.cmake)
 endif ()

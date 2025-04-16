@@ -27,7 +27,7 @@ extern "C"
 #endif
 
 #include "liblinkerfs/config.h"
-#if ENABLE_FEATURE_UDF
+#if LIBLINKERFS_ENABLE_UDF
 
 #include "udfread/udfread.h"
 #include "liblinkerfs/liblinkerfs_export.h"

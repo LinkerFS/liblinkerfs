@@ -12,6 +12,6 @@ if (NOT DEFINED BUILD_SHARED_LIBS)
     set(BUILD_SHARED_LIBS ON)
 endif ()
 
-set(ENABLE_FEATURE_UDF OFF)
+option(LIBLINKERFS_ENABLE_UDF "Enable UDF support for liblinkerfs" OFF)
 add_subdirectory(src)
 add_subdirectory(depends)
