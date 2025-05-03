@@ -67,8 +67,10 @@ static int32_t calculate_path_info_size(const WARP_CONFIG* warp_config, PATH_INF
                 break;
             }
         }
-        if (!path_helper_array[i].duplicate)
+        if (!path_helper_array[i].duplicate) {
+            path_helper_array[i].offset = path_info_size;
             path_info_size += target->path_length;
+        }
     }
     return path_info_size;
 }
@@ -112,7 +114,7 @@ static int64_t write_part_info_and_path_info(const WARP_CONFIG* warp_config, uns
     for (uint16_t i = 0; i < warp_config->warp_count; ++i)
     {
         LINKERFS_PART* part = (LINKERFS_PART*)part_info_begin + i;
-        write_part_info(warp_config->warp_targets + i, part, path_helper_array, header_length + path_offset);
+        write_part_info(warp_config->warp_targets + i, part, path_helper_array + i, header_length + path_offset);
         write_path_info(warp_config->warp_targets + i, part_info_begin + path_offset, path_helper_array + i);
         total_size += part->data_size;
     }
