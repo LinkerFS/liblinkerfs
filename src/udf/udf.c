@@ -109,7 +109,8 @@ static void content_parts_num_warp_targets(const UDF_WARP_TARGET* udf_warp_targe
         warp_target_helper->content_parts.data_end_file_info_index = i - 1;
         warp_target_helper->content_parts.data_end_relative_offset = (part - 1)->length;
     }
-    warp_target_helper->data_length = read_size;
+    warp_target_helper->data_length =
+            read_size < udf_warp_target->size_to_read ? read_size : udf_warp_target->size_to_read;
     warp_target_helper->num_targets = warp_target_helper->content_parts.data_end_file_info_index -
         warp_target_helper->content_parts.data_begin_file_info_index + 1;
 }
