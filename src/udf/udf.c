@@ -142,7 +142,7 @@ static void content_parts_warp_convert(WARP_TARGET* warp_target, const UDF_WARP_
             warp_target->offset_in_file = warp_target_helper->content_parts.data_begin_relative_offset + part->offset;
             warp_target->size_to_read = part->length - warp_target_helper->content_parts.data_begin_relative_offset;
         }
-        else if (i == end_index)
+        if (i == end_index)
         {
             warp_target->offset_in_file = part->offset;
             warp_target->size_to_read = warp_target_helper->content_parts.data_end_relative_offset;
