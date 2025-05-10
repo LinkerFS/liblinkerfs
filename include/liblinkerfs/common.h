@@ -36,7 +36,7 @@ extern "C"
  */
 typedef enum feature {
     FEATURE_BASE = 0,
-    FEATURE_UDF=2
+    FEATURE_UDF=1
 } FEATURE;
 
 /**
