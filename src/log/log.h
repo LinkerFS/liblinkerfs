@@ -24,14 +24,14 @@
 
 #include "../macros.h"
 
-#define DEBUG_MSG(...) \
-do{                    \
-        debug_output(__FILE_NAME__,__LINE__,__func__,__VA_ARGS__);               \
-}while(0)
+#define DEBUG_MSG(...)                                                                                                 \
+    do {                                                                                                               \
+        debug_output(__FILE_NAME__, __LINE__, __func__, __VA_ARGS__);                                                  \
+    } while (0)
 
 #define LOG_OOM_MSG DEBUG_MSG("Out of Memory!")
 
-void debug_output(const char *src_file, int line_num, const char *func, const char *format,
-                  ...) LIBLINKERFS_CHK_PRINTF(4, 5);
+void debug_output(const char *src_file, int line_num, const char *func, const char *format, ...)
+        LIBLINKERFS_CHK_PRINTF(4, 5);
 
-#endif //LIBLINKERFS_LOG_H
+#endif  //LIBLINKERFS_LOG_H

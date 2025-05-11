@@ -25,8 +25,7 @@
 #include "liblinkerfs/liblinkerfs_export.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 #include <stddef.h>
@@ -64,10 +63,9 @@ LIBLINKERFS_PUBLIC size_t bfprt(void *base, size_t top_k, size_t array_length, u
  * @param element_size size of element in memory
  * @param compare custom function to compare element
  */
-LIBLINKERFS_PUBLIC void insert_sort(void *base, size_t array_length, uint32_t element_size,
-                                    COMPARE_FUNC compare);
+LIBLINKERFS_PUBLIC void insert_sort(void *base, size_t array_length, uint32_t element_size, COMPARE_FUNC compare);
 
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_ALGORITHM_H
+#endif  //LIBLINKERFS_ALGORITHM_H

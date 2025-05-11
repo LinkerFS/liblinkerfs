@@ -22,21 +22,22 @@
 #ifndef LIBLINKERFS_GENERATOR_H
 #define LIBLINKERFS_GENERATOR_H
 
+#include <stddef.h>
+
 #include "data/warp.h"
 #include "liblinkerfs_export.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
  * data and length of warp configuration file
  */
-typedef struct warp_file{
-    size_t length; //number of valid bytes in 'data'
-    unsigned char * data;
-}WARP_FILE;
+typedef struct warp_file {
+    size_t length;  //number of valid bytes in 'data'
+    unsigned char *data;
+} WARP_FILE;
 
 /**
  * convert warp config to warp configuration file
@@ -55,4 +56,4 @@ LIBLINKERFS_PUBLIC void release_warp_file(WARP_FILE *warp_file);
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_GENERATOR_H
+#endif  //LIBLINKERFS_GENERATOR_H

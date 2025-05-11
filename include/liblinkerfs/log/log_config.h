@@ -24,8 +24,7 @@
 
 #include "liblinkerfs/liblinkerfs_export.h"
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 typedef void (*LIBLINKERFS_LOG_FUNC)(const char *file, int line, const char *func, const char *msg);
@@ -39,4 +38,4 @@ LIBLINKERFS_PUBLIC void liblinkerfs_set_log_handler(LIBLINKERFS_LOG_FUNC func);
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_LOG_CONFIG_H
+#endif  //LIBLINKERFS_LOG_CONFIG_H

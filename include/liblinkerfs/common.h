@@ -25,8 +25,7 @@
 #include "liblinkerfs/liblinkerfs_export.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 #include <stdint.h>
@@ -36,7 +35,7 @@ extern "C"
  */
 typedef enum feature {
     FEATURE_BASE = 0,
-    FEATURE_UDF=1
+    FEATURE_UDF = 1
 } FEATURE;
 
 /**
@@ -48,4 +47,4 @@ LIBLINKERFS_PUBLIC uint64_t feature();
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_COMMON_H
+#endif  //LIBLINKERFS_COMMON_H

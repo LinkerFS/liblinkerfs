@@ -20,6 +20,7 @@
  */
 
 #include "liblinkerfs/utils/algorithm.h"
+
 #include <memory.h>
 
 void swap_item(void *a, void *b, size_t size) {
@@ -42,8 +43,8 @@ void insert_sort(void *base, size_t array_length, uint32_t element_size, int (*c
     compare_ptr = array;
     current_ptr = array + element_size;
     while (current_ptr < array + array_length * element_size) {
-        while (current_ptr < array + array_length * element_size &&
-               compare(current_ptr, compare_ptr + element_size) > 0)
+        while (current_ptr < array + array_length * element_size
+               && compare(current_ptr, compare_ptr + element_size) > 0)
             current_ptr += element_size;
         compare_ptr = current_ptr - element_size;
         while (compare(compare_ptr, compare_ptr + element_size) > 0) {
@@ -56,9 +57,8 @@ void insert_sort(void *base, size_t array_length, uint32_t element_size, int (*c
     }
 }
 
-static size_t
-bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32_t element_size,
-                       int (*compare)(const void *, const void *)) {
+static size_t bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32_t element_size,
+                              int (*compare)(const void *, const void *)) {
     char *array;
     char *head;
     char *tail;
@@ -89,9 +89,8 @@ bfprt_partition(void *base, size_t pivot_idx, size_t array_length, uint32_t elem
     return (head - array) / element_size;
 }
 
-static size_t
-bfprt_get_median_of_median(void *base, size_t size, uint32_t element_size,
-                           int (*compare)(const void *, const void *)) {
+static size_t bfprt_get_median_of_median(void *base, size_t size, uint32_t element_size,
+                                         int (*compare)(const void *, const void *)) {
     char *array;
     const size_t num_group = size / 5;
 
@@ -103,9 +102,8 @@ bfprt_get_median_of_median(void *base, size_t size, uint32_t element_size,
     return bfprt(array, (num_group >> 1) > 0 ? (num_group >> 1) : 1, num_group, element_size, compare);
 }
 
-size_t
-bfprt(void *array, size_t top_k, size_t array_length, uint32_t element_size,
-      int (*compare)(const void *, const void *)) {
+size_t bfprt(void *array, size_t top_k, size_t array_length, uint32_t element_size,
+             int (*compare)(const void *, const void *)) {
 
     size_t pivot_idx;
     size_t num_order;

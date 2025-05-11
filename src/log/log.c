@@ -19,9 +19,11 @@
  * along with liblinkerfs. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <stdio.h>
-#include <stdarg.h>
 #include "log.h"
+
+#include <stdarg.h>
+#include <stdio.h>
+
 #include "liblinkerfs/log/log_config.h"
 
 

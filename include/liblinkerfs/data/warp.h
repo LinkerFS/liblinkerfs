@@ -22,8 +22,7 @@
 #ifndef LIBLINKERFS_WARP_H
 #define LIBLINKERFS_WARP_H
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 #include <stdint.h>
@@ -49,4 +48,4 @@ typedef struct warp_config {
 #ifdef __cplusplus
 }
 #endif
-#endif //LIBLINKERFS_WARP_H
+#endif  //LIBLINKERFS_WARP_H
