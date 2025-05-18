@@ -173,7 +173,7 @@ static size_t calculate_warp_config_count(const UDF_WARP_CONFIG *udf_warp_config
             continue;
         }
         if (helper->data_length != target->size_to_read) {
-            DEBUG_MSG("Read size mismatch at target index %d in %s (expected: %ld, got: %ld)", i,
+            DEBUG_MSG("Read size mismatch at target index %d in %s (expected: %zd, got: %lld)", i,
                       udf_warp_config->udf_file_path, target->size_to_read, helper->data_length);
         }
     }
