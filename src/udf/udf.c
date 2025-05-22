@@ -51,8 +51,7 @@ struct udf_file_info_handler {
 
 static void content_inline_num_warp_targets(const UDF_WARP_TARGET *udf_warp_target,
                                             UDF_WARP_TARGET_HELPER *warp_target_helper) {
-    const ssize_t left_size =
-            udf_warp_target->file_info->length - udf_warp_target->offset_in_file - udf_warp_target->size_to_read;
+    const ssize_t left_size = udf_warp_target->file_info->length - udf_warp_target->offset_in_file;
     if (left_size <= 0) {
         warp_target_helper->num_targets = 0;
         return;
