@@ -1,6 +1,6 @@
 /*
  * liblinkerfs: a utils library for project linkerfs
- * Copyright (C) 2024-2025  kaedeair <kaedeair@outlook.com>
+ * Copyright (C) 2024-2026  kaedeair <kaedeair@outlook.com>
  *
  * This file is part of liblinkerfs.
  *
@@ -25,7 +25,7 @@
 #include "liblinkerfs/config.h"
 #include "liblinkerfs/generator.h"
 #include "liblinkerfs/liblinkerfs_export.h"
-#include "udfread/udfread.h"
+#include "liblinkerfs/udfread/udfread.h"
 
 #if LIBLINKERFS_ENABLE_UDF
 #ifdef __cplusplus

@@ -13,5 +13,9 @@ if (NOT DEFINED BUILD_SHARED_LIBS)
 endif ()
 
 option(LIBLINKERFS_ENABLE_UDF "Enable UDF support for liblinkerfs" OFF)
+#configuration of msys2 for windows build, when enable UDF support
+set(MSYS_SYSTEM "MINGW64" CACHE STRING "Build environment, one of MINGW64 MINGW32 CLANG64 UCRT64")
+set(MSYS_PATH "C:/msys64" CACHE PATH "Root directory of msys2")
+
 add_subdirectory(src)
 add_subdirectory(depends)
